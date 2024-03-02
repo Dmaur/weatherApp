@@ -1,2 +1,96 @@
-// Sass Styling goes here
-// ...
+//-----------------------------color pallet
+$lightest: rgb(247, 255, 229);
+$light: rgb(225, 236, 200);
+$dark: rgb(196, 215, 178);
+$darkest: rgb(160, 196, 157);
+
+
+// ---------------------------global styling
+* {
+    margin: 0;
+    padding: 0;
+    background-color:$darkest;
+    font-family: Merriweather sans;
+}
+html, body {
+    margin:0;
+    padding:0;
+}
+body{
+    display: flex;
+    align-content: center;
+}
+.g-card {
+    margin: 2rem;
+    background-color:$lightest;
+    align-self: center;
+    height: 75vh;
+    width: 95vw;
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(240, 237, 237, 0.466) ; 
+    @media (max-width:830px) {
+        height: 100vh;
+    }  
+}
+.g-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center ;
+    background-color: $lightest ;
+    margin: 20px;
+    
+    h1,small{
+        padding-top: 1.2rem;
+        background-color: inherit;
+    }
+
+}
+
+h3{
+    background-color: inherit;
+    padding-left: 20px;
+}
+
+.g-drop-down{
+    background-color: inherit;
+    position: relative;
+    margin: 20px;
+    button{
+        padding-left: 1rem;
+        text-align: left;
+        background-color: $light;
+        border-color: $dark;
+        border-style: solid;
+        height: 2rem;
+        width:15rem;
+        border-radius: 10px;
+
+    }
+    div{
+        @extend button;
+       margin-top: .5rem;
+       height: 18rem;
+       width: 14.7rem;
+       position: absolute;
+       display: none;
+       opacity: .5;
+    
+    }
+}
+//  targets the button so that when it is clicked it changes the dropdown divs opacity so it is visible. 
+.g-drop-down > button:focus + div{
+    display: block;
+}
+
+// ---------------------------page styling
+#p-main{
+    background-color: inherit;
+
+    h3{
+        background-color: inherit;
+
+    }
+    
+}
+// ---------------------------section styling
