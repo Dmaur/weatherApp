@@ -1,3 +1,4 @@
+
 //-----------------------------color pallet
 $lightest: rgb(247, 255, 229);
 $light: rgb(225, 236, 200);
@@ -71,19 +72,24 @@ h3{
     align-items: center;
 }
 // ---------------------------section styling
+
 #s-weather-title{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-self: self-end;
-    margin-bottom: 2rem;
-    margin-right: 8rem;
-    height: 200px;
-    width: 200px;
+    align-self: start;
+    // justify-content:space-around
+    margin: 2rem;
+    // margin-bottom: 2rem;
+    // margin-right: 8rem;
+    height: 100px;
+    width: 400px;
     background-color:inherit;
     div{
         background-color: $lightest;
+        padding:.4rem;
+        font-weight: bold;
     }
+    
 }
 #s-weather-details {
     background-color: $lightest;
@@ -93,11 +99,13 @@ h3{
     justify-content: space-around;
     div{
         background-color: inherit;
+        font-weight: 100;
     }
 }
 #s-drop-down-menu{
     background-color: $darkest;
     color: $lightest;
+    width: fit-content;
     border-color: $darkest;
     border-width: 2px;
     height: 1.8rem;
@@ -119,8 +127,9 @@ h3{
     #s-weather-title {
         align-self: self-start;
         height: 150px;
-        width: 150px;
-        padding-left: 20px;
+        padding-left: 0px;
+        margin: 0;
+        margin-top: 2rem;
 
     }
 
