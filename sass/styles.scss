@@ -49,37 +49,15 @@ h3{
     background-color: inherit;
     position: relative;
     margin-left:20px;
-    button{
-        padding-left: 1rem;
-        text-align: left;
-        background-color: $light;
-        border-color: $dark;
-        border-style: solid;
-        height: 2rem;
-        width:15rem;
-        border-radius: 10px;
-        &:hover{
-            background-color: $lightest;
-        }
-
-    }
-    div{
-       @extend button;
-       height: 18rem;
-       width: 13.6rem;
-       position: absolute;
-       pointer-events: none;
-       opacity: 0;
-   
-
-    
-    }
 }
 //  targets the button so that when it is clicked it changes the dropdown divs opacity so it is visible. 
 .g-drop-down > button:focus + div{
     opacity: 1;
     pointer-events:auto;   
 
+}
+.g-drop-city{
+    background-color: $darkest;
 }
 
 // ---------------------------page styling
@@ -117,8 +95,14 @@ h3{
         background-color: inherit;
     }
 }
-
-
+#s-drop-down-menu{
+    background-color: $darkest;
+    color: $lightest;
+    border-color: $darkest;
+    border-width: 2px;
+    height: 1.8rem;
+    border-radius: 10px;
+}
 
 @media (max-width:600px) {
     .g-card{
