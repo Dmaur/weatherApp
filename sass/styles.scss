@@ -1,5 +1,4 @@
-// @import"sass/sass/weather-icons-wind.min.scss";
-// @import"sass/sass/weather-icons.min.scss";
+
 //-----------------------------color pallet
 $lightest: rgb(247, 255, 229);
 $light: rgb(225, 236, 200);
@@ -17,6 +16,18 @@ $darkest: rgb(160, 196, 157);
 body{
     display: flex;
     align-content: center;
+}
+a{
+    color:black;
+    text-decoration: none;
+    background-color: inherit;
+    font-size: rem;
+    border-radius: 10px;
+    padding:3px;
+}
+a:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px $darkest;
 }
 .g-card {
     margin: 2rem;
@@ -52,15 +63,22 @@ h3{
     position: relative;
     margin-left:20px;
 }
-//  targets the button so that when it is clicked it changes the dropdown divs opacity so it is visible. 
-.g-drop-down > button:focus + div{
-    opacity: 1;
-    pointer-events:auto;   
 
-}
 .g-drop-city{
     background-color: $darkest;
 }
+.g-loading-overlay {
+    position: fixed;
+    z-index: 999;
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    overflow: show;
+    margin: auto;
+    display:block;
+    background-color: $darkest;
+  }
 
 // ---------------------------page styling
 #p-main{
@@ -72,16 +90,15 @@ h3{
     background-color: inherit;
     align-items: center;
 }
+.p-infoTitles{
+    text-decoration: underline;
+}
 // ---------------------------section styling
-
 #s-weather-title{
     display: flex;
     flex-direction: column;
     align-self: start;
-    // justify-content:space-around
-    margin: 2rem;
-    // margin-bottom: 2rem;
-    // margin-right: 8rem;
+    // margin: 2rem;
     height: 100px;
     width: 400px;
     background-color:inherit;
@@ -120,7 +137,8 @@ h3{
     }
     small{
         display:none;
-    }
+    } 
+
     h3{
         font-size: 1rem,;
     }
@@ -128,17 +146,16 @@ h3{
     #s-weather-title {
         align-self: self-start;
         height: 150px;
-        padding-left: 0px;
         margin: 0;
         margin-top: 2rem;
+        max-width: 200px ;
 
     }
 
     #s-weather-details{
         flex-direction: column;
         margin-bottom: 1rem;
+        margin-top: 2rem;
     }
-    #s-weather-details > div {
-       margin-top: 1rem;
-    }
+   
 }
