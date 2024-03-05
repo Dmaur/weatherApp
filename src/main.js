@@ -1,8 +1,8 @@
 // importing the sass stylesheet for bundling
 import "./../sass/styles.scss";
 import { getJSONData } from "./Toolkit";
-// import "./weather-icons-wind.min.css";
-// import "./weather-icons.min.css";
+import "./../css/weather-icons.min.css";
+import "./../css/weather-icons-wind.min.css";
 
 import { Spinner } from "spin.js";
 import "spin.js/spin.css";
@@ -12,7 +12,7 @@ const CITY_LIST ="http://localhost:3000/cities.json";
 let dropDownMenu, citiesJson;
 
 // declaring all the variables that need to be filled with weather info
-let sTemp,icon,sky, current, low, high, feelsLike, vis, km, humidity,percent,airP,hPa,wind,degree,windSpeed, location;
+let icon,sky, current, low, high, feelsLike, km, percent,hPa,wind,degree,windSpeed, location;
 let city;
 let loadingOverlay;
 let spinner = new Spinner({ color: "#FFFFFF", lines: 12 }).spin(document.querySelector(".g-loading-overlay"));
@@ -66,6 +66,7 @@ function displayWeather(city){
             document.getElementById("location").innerHTML = `${weatherparsed.message}`;
             document.getElementById("s-weather-details").style.display = "none";
         }else{
+            //setting all the weather infor of the city selected
             document.getElementById("s-weather-details").style.display = "flex";
             current.innerHTML = `Current&nbsp; ${weatherparsed.main.temp}&deg;C`;
             low.innerHTML = `Low&nbsp; ${weatherparsed.main.temp_min}&deg;C `;
@@ -73,13 +74,19 @@ function displayWeather(city){
             feelsLike.innerHTML = `Feels Like&nbsp; ${weatherparsed.main.feels_like}&deg;C &nbsp;`;
             sky.innerHTML = `${weatherparsed.weather[0].description.toUpperCase()}`;
             km.innerHTML = `${weatherparsed.visibility / 1000} &nbsp; KM`;
-            percent.innerHTML = `${weatherparsed.main.humidity} &nbsp; %`;
+            percent.innerHTML = `${weatherparsed.main.humidity} &nbsp;%`;
             hPa.innerHTML = `${weatherparsed.main.pressure} &nbsp; hPa`;
             degree.innerHTML =`${weatherparsed.wind.deg}&deg;`;
             windSpeed.innerHTML =`${weatherparsed.wind.speed} km/hr`;
-            document.querySelector("body").style.color = "black";
-            // location.innerHTML =`${weatherparsed.name.toUpperCase()}`;
+
+            // setting the wind and main weather icons to reflect the chosen weather conditions
+            wind.innerHTML =` <i class="wi wi-wind towards-${weatherparsed.wind.deg}-deg"></i> Wind`;
+            icon.innerHTML =`<i class="wi wi-owm-${weatherparsed.weather[0].id}"></i>`;
             
+
+            //changes the color of the text back to black after loaded;
+            document.querySelector("body").style.color = "black";
+        
 
 
         }
@@ -98,20 +105,16 @@ function onError(e){
 function main(){
     
     // hooking up all the variables to be filled with JSON data to the HTML DOM elements 
-    sTemp = document.getElementById("s-temp");
     icon = document.getElementById("icon");
     sky = document.getElementById("sky");
     current = document.getElementById("current");
     low = document.getElementById("low");
     high = document.getElementById("high");
     feelsLike = document.getElementById("feelsLike");
-    vis = document.getElementById("s-vis");
     km = document.getElementById("km");
-    humidity = document.getElementById("s-humid");
     percent = document.getElementById("percent");
-    airP = document.getElementById("airP");
     hPa = document.getElementById("hPa");
-    wind = document.getElementById("wind");
+    wind = document.getElementById("windTitle");
     degree = document.getElementById("degree");
     windSpeed= document.getElementById("windSpeed");
     location = document.getElementById("location");
@@ -148,17 +151,3 @@ function main(){
     });
 }
 main();
-
-
-
-// current.innerHTML = " ";
-            // low.innerHTML = " ";
-            // high.innerHTML = " ";
-            // feelsLike.innerHTML = " ";
-            // sTemp.textContent = " ";
-            // sky.innerHTML = " ";
-            // km.innerHTML = " ";
-            // humidity.innerHTML = " ";
-            // hPa.innerHTML = " ";
-            // degree.innerHTML = " ";
-            // windSpeed.innerHTML = " ";

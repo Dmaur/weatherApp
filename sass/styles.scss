@@ -11,23 +11,31 @@ $darkest: rgb(160, 196, 157);
     margin: 0;
     padding: 0;
     background-color:$darkest;
-    font-family: Merriweather sans;
+    font-family: Merriweather sans,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body{
     display: flex;
     align-content: center;
 }
+footer{
+    background-color: inherit;
+    padding-bottom: 1rem;
+    justify-self: end;
+}
 a{
     color:black;
     text-decoration: none;
     background-color: inherit;
-    font-size: rem;
+    font-size: 10px;
     border-radius: 10px;
     padding:3px;
 }
 a:hover{
     transform: scale(1.1);
     box-shadow: 0 0 15px $darkest;
+}
+i{
+    background-color: inherit;
 }
 .g-card {
     margin: 2rem;
@@ -64,9 +72,12 @@ h3{
     margin-left:20px;
 }
 
+
 .g-drop-city{
     background-color: $darkest;
 }
+
+
 .g-loading-overlay {
     position: fixed;
     z-index: 999;
@@ -91,7 +102,12 @@ h3{
     align-items: center;
 }
 .p-infoTitles{
-    text-decoration: underline;
+    margin-bottom: .3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#icon{
+    font-size: 3rem;
 }
 // ---------------------------section styling
 #s-weather-title{
@@ -99,12 +115,14 @@ h3{
     flex-direction: column;
     align-self: start;
     // margin: 2rem;
-    height: 100px;
+    // height: 100px;
     width: 400px;
     background-color:inherit;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 20px;
     div{
         background-color: $lightest;
-        padding:.4rem;
         font-weight: bold;
     }
     
@@ -129,11 +147,16 @@ h3{
     height: 1.8rem;
     border-radius: 10px;
 }
+#s-drop-down-menu:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px black;
+}
 
-@media (max-width:600px) {
+@media (max-width:660px) {
     .g-card{
         height: fit-content;
-        margin: 0;
+        margin-top: 2rem;
+        margin-left: .5rem;
     }
     small{
         display:none;
@@ -155,7 +178,11 @@ h3{
     #s-weather-details{
         flex-direction: column;
         margin-bottom: 1rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
+       
+    }
+    #s-weather-details > div{
+        padding-bottom: 1rem;
     }
    
 }

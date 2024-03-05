@@ -9,8 +9,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="./bundle.css">
-        <!-- <link rel="stylesheet" href="./css/weather-icons-wind.min.css">
-        <link rel="stylesheet" href="./css/weather-icons.min.css"> -->
         <script defer src="bundle.js"></script>
     </head>
     <body>
@@ -18,7 +16,7 @@
         <div class="g-card">
             <header class="g-header">
                 <h1>Weather Report</h1>
-                <small><a href="https://openweathermap.org/api" target="blank">Powered by OpenWeatherMap</a></small>
+                <small>Clien Side Programming Project</small>
             </header>
             <div class="g-drop-down">
                 <h3>Select a city to see the current weather</h3>
@@ -28,37 +26,38 @@
             </div>
             <main id="p-main">
                 <div id="s-weather-title">
-                    <div id="icon">Weather Icon here</div>
+                    <div id="icon"></div>
                     <div id="sky">SKY CONDITION</div>
                     <div id="location">CITY, Province</div>
                 </div>
                 
                 <div id="s-weather-details">
                     <div id="s-temp">
-                        <div class="p-infoTitles">Temperature</div>
+                        <div class="p-infoTitles"><i class="wi wi-thermometer"></i> Temperature</div>
                         <div id="current">Current</div>
                         <div id="low">Low</div>
                         <div id="high">High</div>
                         <div id="feelsLike">FeelsLike</div>
                     </div>
                     <div id="s-vis">
-                        <div class="p-infoTitles">Visibility</div>
+                        <div class="p-infoTitles"><i class="wi wi-horizon"></i> Visibility</div>
                         <div id="km">KM</div>
                     </div>
                     <div id="s-humid">
-                            <div class="p-infoTitles">Humidity</div>
+                            <div class="p-infoTitles"><i class="wi wi-humidity"></i> Humidity</div>
                         <div id="percent">%</div>
                     </div>
                     <div id="airP">
-                        <div class="p-infoTitles">Air Pressure</div>
+                        <div class="p-infoTitles"><i class="wi wi-barometer"></i> Air Pressure</div>
                         <div id="hPa">hPa</div>
                     </div>
                     <div id="wind">
-                        <div class="p-infoTitles">Wind</div>
+                        <div class="p-infoTitles" id="windTitle">Wind</div>
                         <div id="degree">Degree</div>
                         <div id="windSpeed">km/h Speed</div>
                     </div>
                 </div>
+                <footer><a href="https://openweathermap.org/api" target="blank">Powered by OpenWeatherMap</a></footer>
             </main>
             
             
