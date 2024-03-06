@@ -65,6 +65,7 @@ function displayWeather(city){
             document.getElementById("sky").innerHTML= `${weatherparsed.message}`;
             document.getElementById("location").innerHTML = `${weatherparsed.message}`;
             document.getElementById("s-weather-details").style.display = "none";
+            icon.innerHTML = "";
         }else{
             //setting all the weather infor of the city selected
             document.getElementById("s-weather-details").style.display = "flex";
@@ -124,14 +125,14 @@ function main(){
 
     document.addEventListener("DOMContentLoaded", function(){
         // check local storage to see if there is a city saved
-        if (localStorage.getItem("location")== null){
+        if (localStorage.getItem("location") == null){
             city = "notfound";
             displayWeather(city);
         } else {
             // if there is a city in local storage display the name and province and pass the city to display weather
             let SavedCity = localStorage.getItem("location");
             let justTheCity = SavedCity.split(",");
-            city = justTheCity[0].trim("");
+            city = justTheCity[0].trim("");  
             location.innerHTML = SavedCity;
             displayWeather(city);
         }

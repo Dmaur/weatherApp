@@ -4,6 +4,7 @@ $lightest: rgb(247, 255, 229);
 $light: rgb(225, 236, 200);
 $dark: rgb(196, 215, 178);
 $darkest: rgb(160, 196, 157);
+$dropPanel: rgb(34, 42, 33);
 
 
 // ---------------------------global styling
@@ -37,6 +38,10 @@ a:hover{
 i{
     background-color: inherit;
 }
+h3{
+    background-color: inherit;
+    padding-bottom: 10px;
+}
 .g-card {
     margin: 2rem;
     background-color:$lightest;
@@ -61,10 +66,7 @@ i{
 
 }
 
-h3{
-    background-color: inherit;
-    padding-bottom: 10px;
-}
+
 
 .g-drop-down{
     background-color: inherit;
@@ -139,13 +141,16 @@ h3{
     }
 }
 #s-drop-down-menu{
-    background-color: $darkest;
+    background-color: $dropPanel;
     color: $lightest;
     width: fit-content;
     border-color: $darkest;
     border-width: 2px;
     height: 1.8rem;
     border-radius: 10px;
+    option{
+        background-color: $dropPanel;
+    }
 }
 #s-drop-down-menu:hover{
     transform: scale(1.1);
