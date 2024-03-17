@@ -26,7 +26,6 @@ function popDrop(data){
     let cityListItem = JSON.parse(citiesJson);
     // ---itterates through the cities json file
     cityListItem.data.cities.forEach((e, index) => {
-        // console.log(`${e.name}, ${e.province}`);
         // creates a new option for the drop down on every itteration. storing the index of the city as the value.
         let dropCity = document.createElement("option");
         dropCity.value = index;
